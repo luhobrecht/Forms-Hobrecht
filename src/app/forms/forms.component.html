@@ -1,0 +1,142 @@
+<form  [formGroup]="userModel" class="p-5 card">
+    <h4 class="text-center mb-5">¡Registrate!</h4>
+    <fieldset class="row">
+        <div class="mb-3 col-6">
+          <label for="name" class="form-label">Nombre</label>
+          <input 
+          [class.is-valid] = "nameControl.touched && nameControl.valid"
+          [class.is-invalid]="nameControl.touched && nameControl.invalid" 
+          formControlName="name"
+          type="text" 
+          class="form-control" 
+          id="name" 
+          aria-describedby="nameHelp"
+          >
+          <div class="invalid-feedback">Este campo es obligatorio</div>
+        </div>
+        <div class="mb-3 col-6">
+          <label for="surname" class="form-label">Apellido</label>
+          <input 
+          [class.is-valid] = "surnameControl.touched && surnameControl.valid"
+          [class.is-invalid]="surnameControl.touched && surnameControl.invalid" 
+          formControlName="surname"
+          type="text" 
+          class="form-control" 
+          id="surname"
+          >
+          <div class="invalid-feedback">Este campo es obligatorio</div>
+        </div>
+        <div class="mb-3 col-3">
+            <label for="age" class="form-label">Edad</label>
+            <input 
+            formControlName="age"
+            type="number" 
+            class="form-control" 
+            id="age"
+            >
+        </div>
+        <div class="col-3">
+            <label for="gender" class="form-label">Género</label>
+            <select 
+            formControlName="gender"
+            class="form-select" 
+            aria-label="Default select example" 
+            id="gender"
+            >
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+                <option value="other" selected>Otro</option>
+            </select>
+        </div>
+        <div class="mb-3 col-6">
+            <label for="number" class="form-label">Teléfono</label>
+            <input 
+            [class.is-valid] = "numberControl.touched && numberControl.valid"
+            [class.is-invalid]="numberControl.touched && numberControl.invalid" 
+            formControlName="number"
+            type="phone" 
+            class="form-control" 
+            id="number"
+            placeholder="123456789"
+            >
+            <div class="invalid-feedback">Este campo es obligatorio</div>
+        </div>
+    </fieldset>
+    <fieldset class="row mt-5">
+        <div class="mb-3 col-12">
+            <label for="adress" class="form-label">Dirección</label>
+            <input 
+            [class.is-valid] = "adressControl.touched && adressControl.valid"
+            [class.is-invalid]="adressControl.touched && adressControl.invalid" 
+            formControlName="adress"
+            type="text" 
+            class="form-control" 
+            id="adress"
+            placeholder="Av. Siempre Viva 123"
+            >
+            <div class="invalid-feedback">Coloca una dirección válida.</div>
+          </div>
+        <div class="mb-3 col-4">
+          <label for="city" class="form-label">Ciudad</label>
+          <input 
+          [class.is-valid] = "cityControl.touched && cityControl.valid"
+          [class.is-invalid]="cityControl.touched && cityControl.invalid" 
+          formControlName="city"
+          type="text" 
+          class="form-control" 
+          id="city"
+          >
+          <div class="invalid-feedback">Este campo es obligatorio</div>
+        </div>
+        <div class="mb-3 col-4">
+          <label for="province" class="form-label">Provincia</label>
+          <input 
+          formControlName="province"
+          type="text"
+          class="form-control" 
+          id="province"
+          >
+        </div>
+        <div class="mb-3 col-4">
+            <label for="postalCode" class="form-label">Código Postal</label>
+            <input 
+            [class.is-valid] = "postalCodeControl.touched && postalCodeControl.valid"
+            [class.is-invalid]="postalCodeControl.touched && postalCodeControl.invalid" 
+            formControlName="postalCode"
+            type="number" 
+            class="form-control" 
+            id="postalCode"
+            >
+            <div class="invalid-feedback">Coloca un código postal válido. Ej. 2804</div>
+          </div>
+    </fieldset>
+    <fieldset class="col-12 mt-5">
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input 
+          formControlName="email"
+          type="email" 
+          class="form-control"
+          [class.is-valid] = "emailControl.touched && emailControl.valid"
+          [class.is-invalid]="emailControl.touched && emailControl.invalid" 
+          id="email" 
+          aria-describedby="emailHelp"
+          placeholder="correo@example.com"
+          >
+          <div class="invalid-feedback">Debes colocar tu correo eléctronico. Ej: correo@ejemplo.com</div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input 
+          [class.is-valid] = "passwordControl.touched && passwordControl.valid"
+          [class.is-invalid]="passwordControl.touched && passwordControl.invalid" 
+          formControlName="password"
+          type="password" 
+          class="form-control" 
+          id="password"
+          >
+          <div class="invalid-feedback">La contraseña debe tener entre 6 a 10 caracteres.</div>
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-dark col-3 align-self-center mt-3">Submit</button>
+</form>
